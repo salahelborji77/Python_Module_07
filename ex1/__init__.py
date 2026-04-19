@@ -2,7 +2,7 @@ from .capability_factory import (
     HealingCreatureFactory,
     TransformCreatureFactory,
 )
-from capability import HealCapability, TransformCapability
+from .capability import HealCapability, TransformCapability
 
 
 __all__ = [
