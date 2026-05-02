@@ -1,6 +1,11 @@
 from ex0 import FlameFactory, AquaFactory, CreatureFactory
 from ex1 import HealingCreatureFactory, TransformCreatureFactory
-from ex2 import NormalStrategy, AggressiveStrategy, DefensiveStrategy, BattleStrategy
+from ex2 import (
+    NormalStrategy,
+    AggressiveStrategy,
+    DefensiveStrategy,
+    BattleStrategy
+)
 
 
 def battle(
@@ -21,6 +26,7 @@ def battle(
         strg_2.act(creature_2)
     except ValueError as err:
         print(f"{err}")
+
 
 def iter_test(test: list[tuple[CreatureFactory, BattleStrategy]]) -> None:
     print("*** Tournament ***")
@@ -49,15 +55,17 @@ def main() -> None:
     multiple = [
         (AquaFactory(), NormalStrategy()),
         (HealingCreatureFactory(), DefensiveStrategy()),
-        (TransformCreatureFactory(), AggressiveStrategy())   
+        (TransformCreatureFactory(), AggressiveStrategy())
     ]
     print("\nTournament 2 (multiple))")
     print("[ (Aquabub+Normal), (Healing+Defensive), (Transform+Aggressive) ]")
     iter_test(multiple)
 
 
-
-
-
-
-main()
+if __name__ == "__main__":
+    try:
+        main()
+    except ValueError as err:
+        print(f"{err}")
+    except Exception as err:
+        print(f"{err}")

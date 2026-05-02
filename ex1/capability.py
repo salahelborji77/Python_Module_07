@@ -53,8 +53,8 @@ class Shiftling(TransformCapability, Creature):
         return "Shiftling return to normal"
 
     def attack(self) -> str:
-        attack = self.attacks[0] if len(self.attacks) == 1 else self.attacks[1]
-        return attack
+        attck = self.attacks[0] if len(self.attacks) == 1 else self.attacks[1]
+        return attck
 
 
 class Morphagon(TransformCapability, Creature):
